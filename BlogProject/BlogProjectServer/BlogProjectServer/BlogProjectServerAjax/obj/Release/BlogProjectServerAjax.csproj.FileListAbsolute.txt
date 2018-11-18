@@ -1,0 +1,8 @@
+C:\Users\dell\OneDrive\ProjectManage\BlogProject\BlogProjectServer\BlogProjectServer\BlogProjectServerAjax\bin\BlogProjectServerAjax.dll.config
+C:\Users\dell\OneDrive\ProjectManage\BlogProject\BlogProjectServer\BlogProjectServer\BlogProjectServerAjax\bin\BlogProjectServerAjax.dll
+C:\Users\dell\OneDrive\ProjectManage\BlogProject\BlogProjectServer\BlogProjectServer\BlogProjectServerAjax\bin\BlogProjectServerAjax.pdb
+C:\Users\dell\OneDrive\ProjectManage\BlogProject\BlogProjectServer\BlogProjectServer\BlogProjectServerAjax\bin\Newtonsoft.Json.dll
+C:\Users\dell\OneDrive\ProjectManage\BlogProject\BlogProjectServer\BlogProjectServer\BlogProjectServerAjax\bin\Newtonsoft.Json.xml
+C:\Users\dell\OneDrive\ProjectManage\BlogProject\BlogProjectServer\BlogProjectServer\BlogProjectServerAjax\obj\Release\BlogProjectServerAjax.csprojResolveAssemblyReference.cache
+C:\Users\dell\OneDrive\ProjectManage\BlogProject\BlogProjectServer\BlogProjectServer\BlogProjectServerAjax\obj\Release\BlogProjectServerAjax.dll
+C:\Users\dell\OneDrive\ProjectManage\BlogProject\BlogProjectServer\BlogProjectServer\BlogProjectServerAjax\obj\Release\BlogProjectServerAjax.pdb

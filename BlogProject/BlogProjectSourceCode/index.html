@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>月无影</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Blog Project">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+    <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1//owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+    <link rel="stylesheet" type="text/css" href="plugins/jquery.mb.YTPlayer-3.1.12/jquery.mb.YTPlayer.css">
+    <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
+    <link rel="stylesheet" type="text/css" href="styles/responsive.css">
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+    Blog start 2018-08-29
+    <div class="super_container" id="MainNav">
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="logo"><a href="#"></a>Xing</div>
+                            <nav class="main_nav">
+                                <ul>
+                                    <li class="active"><a href="index.html">Home</a></li>
+                                    <li v-for="(MainNavLi,index) in MainNavLis" v-bind:key="MainNavLi.id">
+                                        <a v-bind:href="MainNavLi.MainHref">{{MainNavLi.MainName}}</a>
+                                    </li>
+
+                                    <!-- <li><a href="#">知识分享</a></li>
+                                    <li><a href="#">摄影分享</a></li>
+                                    <li><a href="#">音乐分享</a></li>
+                                    <li><a href="#">旅行分享</a></li> -->
+                                </ul>
+                            </nav>
+
+                            <div class="search_container ml-auto">
+                                <div class="weather">
+                                    <div class="temperature">+10°</div>
+                                    <img class="weather_icon" src="images/cloud.png" alt="天气">
+                                </div>
+                                <form action="#">
+                                    <input type="search" class="header_search_input" required="required" placeholder="Type to Search...">
+                                    <img class="header_search_icon" src="images/search.png" alt="">
+                                </form>
+
+                            </div>
+                            <div class="hamburger ml-auto menu_mm">
+                                <i class="fa fa-bars trans_200 menu_mm" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Menu -->
+        <div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
+            <div class="menu_close_container">
+                <div class="menu_close">
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="logo menu_mm"><a href="#">Xing</a></div>
+            <div class="search">
+                <form action="#">
+                    <input type="search" class="header_search_input menu_mm" required="required" placeholder="Type to Search...">
+                    <img class="header_search_icon menu_mm" src="images/search_2.png" alt="">
+                </form>
+            </div>
+            <nav class="menu_nav">
+                <ul class="menu_mm">
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li v-for="(MainNavLi,index) in MainNavLis" v-bind:key="MainNavLi.id" class="menu_mm">
+                        <a v-bind:href="MainNavLi.MainHref">{{MainNavLi.MainName}}</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Home -->
+        <div class="home">
+            <!-- Home Slider -->
+            <div class="home_slider_container">
+                <div class="owl-carousel owl-theme home_slider">
+
+                    <!-- Slider Item -->
+                    <div class="owl-item" v-for="(customDot,index) in customDots">
+                        <component-slideritem :alwaysbackgroundimg="customDot.alwaysbackgroundimg" :categoryhref="customDot.categoryhref"
+                            :categorycontent="customDot.categorycontent" :titlehref="customDot.titlehref" :titlecontent="customDot.titlecontent"
+                            :linkhref="customDot.linkhref" :linkcontent="customDot.linkcontent" :similarposts="customDot.similarposts"></component-slideritem>
+                    </div>
+
+                </div>
+
+                <div class="custom_nav_container home_slider_nav_container">
+                    <div class="custom_prev custom_prev_home_slider">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            x="0px" y="0px" width="7px" height="12px" viewBox="0 0 7 12" enable-background="new 0 0 7 12"
+                            xml:space="preserve">
+                            <polyline fill="#FFFFFF" points="0,5.61 5.609,0 7,0 7,1.438 2.438,6 7,10.563 7,12 5.609,12 -0.002,6.39 " />
+                        </svg>
+                    </div>
+                    <ul id="custom_dots" class="custom_dots custom_dots_home_slider">
+
+                        <span v-for="(customDot,index) in customDots" :key="index">
+                            <component-customdot :done1="customDot.done">
+
+                            </component-customdot>
+                        </span>
+
+                    </ul>
+                    <div class="custom_next custom_next_home_slider">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            x="0px" y="0px" width="7px" height="12px" viewBox="0 0 7 12" enable-background="new 0 0 7 12"
+                            xml:space="preserve">
+                            <polyline fill="#FFFFFF" points="6.998,6.39 1.389,12 -0.002,12 -0.002,10.562 4.561,6 -0.002,1.438 -0.002,0 1.389,0 7,5.61 " />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page Content -->
+        <div class="page_content">
+            <div class="container">
+                <div class="row row-lg-eq-height">
+                    <!-- Main Content -->
+                    <div class="col-lg-9">
+                        <div class="main_content">
+                            <!-- Blog Section - Don't Miss -->
+                            <div class="blog_section" v-for="(bolgsection,index) in bolgsections">
+                                <component-bolgsection :section_title="bolgsection.section_title" :tags="bolgsection.tags"
+                                    :more="bolgsection.more" :gridclearfixs="bolgsection.gridclearfixs"></component-bolgsection>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="styles/bootstrap4/popper.js"></script>
+<script src="styles/bootstrap4/bootstrap.min.js"></script>
+<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="plugins/jquery.mb.YTPlayer-3.1.12/jquery.mb.YTPlayer.js"></script>
+<script src="plugins/easing/easing.js"></script>
+<script src="plugins/masonry/masonry.js"></script>
+<script src="plugins/masonry/images_loaded.js"></script>
+<script src="js/custom.js"></script>
+
+<!-- //Home的js部分 -->
+<script>
+
+    Vue.component("component-bolgsection", {
+        template: `
+    <!-- Blog Section - Don't Miss -->                   
+<div class="blog_section">
+        <div class="section_panel d-flex flex-row align-items-center justify-content-start">
+            <div class="section_title">{{section_title}}</div>
+            <div class="section_tags ml-auto">
+                <ul>
+                    <li class="active"><a v-bind:href="tags.activehref">{{tags.activecontent}}</a></li>
+                    <li v-for="(tagsother,index) in tags.tagsothers"><a v-bind:href="tagsother.tagshref">{{tagsother.tagscontent}}}</a></li>
+                </ul>
+            </div>
+            <div class="section_panel_more" v-if="isDone">
+                <ul>
+                    <li>more
+                        <ul>
+                            <li v-for="(moreother,index) in more.moreothers"><a v-bind:href="moreother.morehref">{{moreothers.morecontent}}</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="section_content">
+            <div class="grid clearfix">
+                <div v-for="(gridclearfix,index) in gridclearfixs" v-bind:class="gridclearfix.clearfix_class">
+                        <img class="card-img-top" v-bind:src="gridclearfix.gridclearfix_src" v-bind:alt="gridclearfix.gridclearfix_alt">
+                        <div class="card-body">
+                            <div class="card-title"><a v-bing:href="gridclearfix.gridclearfix_titlehref">{{gridclearfix.gridclearfix_titlecontent}}</a></div>
+                            <p class="card-text">{{gridclearfix.gridclearfix_textcontent}}</p>
+                            <small class="post_meta"><a v-bind:href="gridclearfix.gridclearfix_metahref">{{gridclearfix.gridclearfix_metahrefcontent}}</a><span>{{gridclearfix.gridclearfix_metacontent}}</span></small>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    `, props: ["section_title", "tags", "more", "gridclearfixs"],
+        data() {
+            return {
+                isDone: this.more.moreexist
+            };
+        },
+        methods: {
+            toggle(e) {
+                this.isDone = !this.isDone;
+            }
+        }
+    })
+
+
+    Vue.component("component-slideritem", {
+        template: `
+        <div class="home_slider_background" v-bind:style="alwaysbackgroundimg" >
+        <div class="home_slider_content_container">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="home_slider_content"  >
+                    <div class="home_slider_item_category trans_200"><a v-bind:href="categoryhref"
+                            class="trans_200">{{categorycontent}}</a></div>
+                    <div class="home_slider_item_title">
+                        <a v-bind:href="titlehref">{{titlecontent}}</a>
+                    </div>
+                    <div class="home_slider_item_link">
+                        <a v-bind:href="linkhref" class="trans_200">{{linkcontent}}
+                            <svg version="1.1" id="link_arrow_1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                width="19px" height="13px" viewBox="0 0 19 13"
+                                enable-background="new 0 0 19 13" xml:space="preserve">
+                                <polygon fill="#FFFFFF" points="12.475,0 11.061,0 17.081,6.021 0,6.021 0,7.021 17.038,7.021 11.06,13 12.474,13 18.974,6.5 " />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Similar Posts -->
+<div class="similar_posts_container">
+    <div class="container">
+        <div class="row d-flex flex-row align-items-end">
+
+            <!-- Similar Post -->
+            <div class="col-lg-3 col-md-6 similar_post_col" v-for="(SimilarPost,index) in similarposts">
+                <div class="similar_post trans_200">
+                    <a v-bind:href="SimilarPost.similarPostHref">{{SimilarPost.similarPostContent}}</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+</div>
+ `,
+        props: ["alwaysbackgroundimg", "categoryhref", "categorycontent", "titlehref", "titlecontent", "linkhref", "linkcontent", "similarposts"]
+    });
+
+    Vue.component("component-customdot", {
+        template: `
+        <li v-if="isDone" class="custom_dot custom_dot_home_slider active"><span></span></li>
+        <li v-else class="custom_dot custom_dot_home_slider"><span></span></li>
+ `,
+        props: ["done1"],
+        data() {
+            return {
+                isDone: this.done1
+            };
+        },
+        methods: {
+            toggle(e) {
+                this.isDone = !this.isDone;
+            }
+        }
+    });
+
+
+</script>
+<!-- //头部的js调用文件 -->
+<script src="JSServer/HeaderJs.js"></script>
+
+</html>
